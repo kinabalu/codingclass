@@ -26,13 +26,18 @@ while matchsticks > 0:
 
     matchsticks = matchsticks - player_choice
 
+    if which_player == 1:
+        next_player = 2
+    else:
+        next_player = 1
+
+    if matchsticks == 0:
+        print('You picked the last matchstick player %d! You lose!' % which_player)
+        break
+    elif matchsticks == 1:
+        print('Only 1 matchstick remains, player %d loses!' % next_player)
+        break
+
     print('You picked %d matchsticks\nThere are %d matchsticks left\n' % (player_choice, matchsticks))
 
-    if which_player == 1:
-        which_player = 2
-    else:
-        which_player = 1
-
-    if matchsticks == 1:
-        print('Only 1 matchstick remains, player %d loses!' % which_player)
-        break
+    which_player = next_player
